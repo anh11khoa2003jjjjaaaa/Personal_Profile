@@ -1,0 +1,494 @@
+::root {
+    --main-color: gainsboro;
+    --second-color: white;
+    --text-colorb: black;
+    --text-colorg: gainsboro;
+    --text-colorw: white;
+    --font-size_h1: 2rem;
+    --font-size_h2: 1.5rem;
+    --font-size_h3: 1rem;
+    --font-size_p: 0.8rem;
+    --bg-white: white;
+    --bg-black: black;
+
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(241, 238, 236);
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "nav header "
+        "nav main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 20vh 1fr;
+    gap: 10px;
+    background-color: var(--main-color);
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0 20px 20px 0;
+
+}
+
+header {
+    grid-area: header;
+    background-color: var(--main-color);
+    color: var(--text-colorb);
+    height: 20vh;
+    display: grid;
+    grid-template-areas:
+        "box1"
+        "box2";
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 10vh;
+
+}
+
+
+.box1 {
+    background-color: var(--main-color);
+    border-bottom: 2px solid gainsboro;
+    display: grid;
+    align-items: center;
+    gap: 5px;
+    grid-template-areas:
+        "icon title options notification avatar"
+
+    ;
+    grid-template-columns: 80px 1fr 190px 50px 70px;
+    grid-template-rows: 1fr;
+
+}
+
+.box1.title {
+    grid-area: title;
+    color: var(--bg-black);
+    background-color: var(--main-color);
+    font-size: var(--font-size_h1);
+    overflow: hidden;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.icon {
+    grid-area: icon;
+    color: var(--bg-white);
+    background-color: var(--main-color);
+
+
+}
+
+.fa-bars {
+    color: var(--bg-white) !important;
+    background-color: var(--main-color);
+
+}
+
+.opiontLanguage {
+    grid-area: options;
+    background-color: var(--main-color);
+    color: rgb(158, 154, 154);
+}
+
+.notification {
+    grid-area: notification;
+    color: rgb(158, 154, 154);
+    ;
+
+}
+
+.avatar {
+    grid-area: avatar;
+    width: 50px;
+    /* Kích thước khung */
+    height: 50px;
+    /* Kích thước khung */
+    display: flex;
+    /* Sử dụng Flex để căn giữa */
+    justify-content: center;
+    /* Căn ngang */
+    align-items: center;
+    /* Căn dọc */
+    overflow: hidden;
+    /* Ngăn tràn ngoài khung */
+
+
+}
+
+.avatar img {
+    width: 100%;
+    /* Lấp đầy khung .avatar */
+    height: 100%;
+    /* Lấp đầy khung .avatar */
+    border-radius: 50%;
+    /* Giữ hình tròn */
+    object-fit: cover;
+    overflow: hidden;
+    object-position: 0px 0px;
+    /* Căn giữa ảnh */
+}
+
+.box2 {
+    display: flex;
+    background-color: var(--main-color);
+    border-bottom: 2px solid gainsboro;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn_1 {
+    color: rgb(75, 151, 217);
+    border: 1px solid rgb(75, 151, 217);
+    border-radius: 15px;
+    font-weight: bold;
+    height: 2rem;
+    width: 4.5rem;
+    padding: 10px;
+}
+
+.btn_2 {
+    color: white;
+    background-color: rgb(28, 141, 240);
+    border: 1px solid rgb(75, 151, 217);
+    border-radius: 15px;
+    font-weight: bold;
+    height: 2rem;
+    width: 4.5rem;
+    margin-right: 10px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(76, 108, 223);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px 0 0 20px;
+}
+
+main {
+    grid-area: main;
+    background-color: rgb(241, 238, 236);
+    ;
+    display: grid;
+    grid-template-areas:
+        "content_left content_right"
+    ;
+    grid-template-columns: 1fr 450px;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    padding: 0.5rem;
+
+
+}
+
+.content_left {
+
+    grid-area: content_left;
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-areas:
+        "picture info"
+        "infor_detail infor_detail"
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+
+}
+
+.picture {
+    grid-area: picture;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.info {
+    grid-area: info;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.infor_detail {
+    grid-area: infor_detail;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.content_right {
+    grid-area: content_right;
+    background-color: rgb(241, 238, 236);
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas:
+        "plan1"
+        "plan2"
+        "plan3"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.plan1 {
+    grid-area: plan1;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+.content_left .picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+
+
+}
+
+.picture img {
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid gainsboro;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: 0px 0px;
+    margin-bottom: 20px;
+
+
+}
+
+.picture .name {
+
+    font-weight: bold;
+}
+
+.picture .phone {
+
+    font-weight: bold;
+    color: rgb(75, 151, 217);
+}
+
+.picture .email {
+
+    font: 1rem italic;
+}
+
+.info {
+
+    display: flex;
+    flex-direction: column;
+
+
+
+
+}
+
+.box_info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 50%;
+    height: 30px;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+}
+
+.box_info p {
+    font-weight: bold;
+
+}
+
+/* Bắt đầu css nút sửa */
+.btn_editInfo .fa-pencil {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
+    width: 25px;
+    height: 25px;
+    border: 2px solid gainsboro;
+    color: gray
+}
+
+/* Kết thúc css cho nút sửa */
+
+/* Bắt đầu css cho table */
+.info-table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.info-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+    color: #666;
+    width: 200px;
+
+}
+
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Kết thúc css cho table */
+
+.plan2 {
+  grid-area: plan2;
+  background-color: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-areas:
+      "column_title download"
+      "linkdownload_1 dungluong1"
+      "linkdownload_2 dungluong2"
+      "linkdownload_3 dungluong3"
+      "linkdownload_4 dungluong4"
+      "linkdownload_5 dungluong5";
+  grid-template-columns: 70% 30%;
+  grid-auto-rows: min-content; /* các row cao theo nội dung */
+  gap: 5px;
+ 
+ 
+}
+
+.cloumn_title {
+    grid-area: column_title;
+    font-size: 1.5rem;
+    background-color: yellow;
+ 
+    
+
+
+
+}
+
+.download {
+    grid-area: download;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+}
+
+.linkdownload_1 {
+    grid-area: linkdownload_1;
+    width: 33ch;
+    word-wrap: break-word;
+    white-space: normal;
+
+}
+
+
+.dungluong1 {
+    grid-area: dungluong1;
+
+}
+
+.linkdownload_2 {
+    grid-area: linkdownload_2;
+width: 33ch;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.dungluong2 {
+    grid-area: dungluong2;
+
+
+}
+
+.linkdownload_3 {
+    grid-area: linkdownload_3;
+width: 33ch;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.dungluong3 {
+    grid-area: dungluong3;
+
+}
+
+.linkdownload_4 {
+    grid-area: linkdownload_4;
+width: 33ch;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.dungluong4 {
+    grid-area: dungluong4;
+
+}
+
+.linkdownload_5 {
+    grid-area: linkdownload_5;
+width: 33ch;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.dungluong5 {
+    grid-area: dungluong5;
+
+}
+
+/*  */
+.plan3 {
+    grid-area: plan3;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+/* Thêm nội dung nav (giả lập) */
+nav h2 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "main";
+        grid-template-columns: 1fr;
+        /* 1 cột */
+        grid-template-rows: 80px 1fr;
+        /* Header 80px, main linh hoạt */
+    }
+
+    nav {
+        display: none;
+        /* Ẩn nav trên mobile, có thể dùng toggle JS */
+    }
+}

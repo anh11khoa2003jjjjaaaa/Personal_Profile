@@ -1,0 +1,395 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/profile.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+   
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học CSS từ Cơ bản đến Nâng cao</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: #2575fc;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: #6a11cb;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .visual-example {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        
+        .grid-item {
+            background-color: #6a11cb;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            margin: 5px 10px;
+            padding: 8px 15px;
+            background-color: #6a11cb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation example */
+        @keyframes example-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .animated {
+            animation: example-animation 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Học CSS từ Cơ bản đến Nâng cao</h1>
+        <p>Nắm vững CSS là nền tảng để sử dụng hiệu quả Tailwind CSS</p>
+    </header>
+    
+    <div class="nav">
+        <div class="nav-item">Cú pháp CSS</div>
+        <div class="nav-item">Box Model</div>
+        <div class="nav-item">Flexbox</div>
+        <div class="nav-item">Grid</div>
+        <div class="nav-item">Responsive</div>
+        <div class="nav-item">Animations</div>
+    </div>
+    
+    <div class="container">
+        <div class="column">
+            <div class="section">
+                <h2>Cú pháp CSS cơ bản</h2>
+                <p>CSS (Cascading Style Sheets) được sử dụng để định dạng và bố cục các phần tử HTML.</p>
+                
+                <h3>Cấu trúc một khai báo CSS</h3>
+                <div class="code-example">
+                    selector {<br>
+                    &nbsp;&nbsp;property: value;<br>
+                    &nbsp;&nbsp;property: value;<br>
+                    }
+                </div>
+                
+                <h3>Ví dụ:</h3>
+                <div class="code-example">
+                    body {<br>
+                    &nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+                    &nbsp;&nbsp;background-color: #f0f0f0;<br>
+                    &nbsp;&nbsp;margin: 0;<br>
+                    &nbsp;&nbsp;padding: 20px;<br>
+                    }<br><br>
+                    
+                    .header {<br>
+                    &nbsp;&nbsp;color: #333;<br>
+                    &nbsp;&nbsp;text-align: center;<br>
+                    &nbsp;&nbsp;padding: 20px;<br>
+                    }
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Box Model</h2>
+                <p>Mỗi phần tử HTML đều là một hộp (box) với các thành phần: content, padding, border, margin.</p>
+                
+                <div class="visual-example">
+                    <div style="width: 200px; margin: 0 auto; padding: 20px; border: 5px solid #6a11cb; background-color: #2575fc; color: white; text-align: center;">
+                        Nội dung
+                    </div>
+                    <p style="text-align: center; margin-top: 10px;">Content → Padding → Border → Margin</p>
+                </div>
+                
+                <div class="code-example">
+                    .box {<br>
+                    &nbsp;&nbsp;width: 200px;          /* Chiều rộng nội dung */<br>
+                    &nbsp;&nbsp;height: 100px;         /* Chiều cao nội dung */<br>
+                    &nbsp;&nbsp;padding: 20px;         /* Khoảng cách giữa nội dung và viền */<br>
+                    &nbsp;&nbsp;border: 5px solid #333; /* Viền */<br>
+                    &nbsp;&nbsp;margin: 30px;          /* Khoảng cách bên ngoài viền */<br>
+                    &nbsp;&nbsp;box-sizing: border-box; /* Quan trọng: bao gồm padding và border trong width/height */<br>
+                    }
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Flexbox</h2>
+                <p>Flexbox giúp sắp xếp các phần tử một cách linh hoạt và responsive.</p>
+                
+                <div class="flex-container">
+                    <div class="box" style="background-color: #6a11cb;">1</div>
+                    <div class="box" style="background-color: #2575fc;">2</div>
+                    <div class="box" style="background-color: #6a11cb;">3</div>
+                </div>
+                
+                <div class="code-example">
+                    .container {<br>
+                    &nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;justify-content: center;   /* Căn ngang */<br>
+                    &nbsp;&nbsp;align-items: center;       /* Căn dọc */<br>
+                    &nbsp;&nbsp;flex-wrap: wrap;           /* Cho phép xuống dòng */<br>
+                    &nbsp;&nbsp;gap: 10px;                 /* Khoảng cách giữa các mục */<br>
+                    }<br><br>
+                    
+                    .item {<br>
+                    &nbsp;&nbsp;flex: 1;                  /* Chia đều không gian */<br>
+                    &nbsp;&nbsp;min-width: 100px;         /* Độ rộng tối thiểu */<br>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="section">
+                <h2>CSS Grid</h2>
+                <p>CSS Grid cho phép tạo bố cục hai chiều (hàng và cột) một cách mạnh mẽ.</p>
+                
+                <div class="grid-container">
+                    <div class="grid-item">1</div>
+                    <div class="grid-item">2</div>
+                    <div class="grid-item">3</div>
+                    <div class="grid-item">4</div>
+                    <div class="grid-item">5</div>
+                    <div class="grid-item">6</div>
+                </div>
+                
+                <div class="code-example">
+                    .container {<br>
+                    &nbsp;&nbsp;display: grid;<br>
+                    &nbsp;&nbsp;grid-template-columns: repeat(3, 1fr); /* 3 cùng bằng nhau */<br>
+                    &nbsp;&nbsp;grid-template-rows: 100px 200px;       /* 2 hàng với chiều cao khác nhau */<br>
+                    &nbsp;&nbsp;gap: 15px;                            /* Khoảng cách giữa các ô */<br>
+                    &nbsp;&nbsp;grid-template-areas: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"header header header"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"sidebar content content";<br>
+                    }<br><br>
+                    
+                    .item {<br>
+                    &nbsp;&nbsp;grid-area: header;  /* Chỉ định vùng */<br>
+                    }
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Responsive Design</h2>
+                <p>Thiết kế responsive đảm bảo trang web hiển thị tốt trên mọi kích thước màn hình.</p>
+                
+                <h3>Media Queries</h3>
+                <div class="code-example">
+                    /* Mobile First */<br>
+                    .container {<br>
+                    &nbsp;&nbsp;padding: 10px;<br>
+                    }<br><br>
+                    
+                    /* Tablet */<br>
+                    @media (min-width: 768px) {<br>
+                    &nbsp;&nbsp;.container {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 20px;<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br><br>
+                    
+                    /* Desktop */<br>
+                    @media (min-width: 1024px) {<br>
+                    &nbsp;&nbsp;.container {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;max-width: 1200px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 0 auto;<br>
+                    &nbsp;&nbsp;}<br>
+                    }
+                </div>
+                
+                <h3>Đơn vị responsive</h3>
+                <ul>
+                    <li><strong>%</strong>: Tỷ lệ phần trăm so với phần tử cha</li>
+                    <li><strong>vw/vh</strong>: Tỷ lệ phần trăm so với viewport (khung nhìn)</li>
+                    <li><strong>rem</strong>: Tỷ lệ so với kích thước font gốc (thường là 16px)</li>
+                    <li><strong>em</strong>: Tỷ lệ so với kích thước font của phần tử cha</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>CSS Animations & Transitions</h2>
+                <p>Tạo hiệu ứng chuyển động và chuyển tiếp giúp trang web sinh động hơn.</p>
+                
+                <div class="visual-example" style="text-align: center;">
+                    <div class="box animated" style="background-color: #2575fc;">Hiệu ứng!</div>
+                </div>
+                
+                <div class="code-example">
+                    /* Transition */<br>
+                    .button {<br>
+                    &nbsp;&nbsp;transition: all 0.3s ease;<br>
+                    &nbsp;&nbsp;background-color: blue;<br>
+                    }<br>
+                    .button:hover {<br>
+                    &nbsp;&nbsp;background-color: darkblue;<br>
+                    &nbsp;&nbsp;transform: translateY(-3px);<br>
+                    }<br><br>
+                    
+                    /* Animation */<br>
+                    @keyframes slide-in {<br>
+                    &nbsp;&nbsp;from { transform: translateX(-100%); }<br>
+                    &nbsp;&nbsp;to { transform: translateX(0); }<br>
+                    }<br><br>
+                    
+                    .element {<br>
+                    &nbsp;&nbsp;animation: slide-in 0.5s ease forwards;<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Lời khuyên khi học CSS</h2>
+        <ul>
+            <li>Học và thực hành từng khái niệm một</li>
+            <li>Sử dụng Developer Tools (F12) để kiểm tra và chỉnh sửa CSS</li>
+            <li>Xây dựng các dự án nhỏ để áp dụng kiến thức</li>
+            <li>Tham khảo các trang như MDN Web Docs, CSS-Tricks</li>
+            <li>Khi đã nắm vững CSS cơ bản, chuyển sang học Tailwind CSS sẽ dễ dàng hơn</li>
+        </ul>
+        
+        <p>Hãy bắt đầu với những kiến thức cơ bản nhất, thực hành thường xuyên, và dần dần bạn sẽ thành thạo CSS!</p>
+    </div>
+</body>
+</html>
